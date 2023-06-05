@@ -7,11 +7,12 @@ const BookShow = ({ title, id, onDelete, onEdit }) => {
     const handleSubmit = (id, newTitle) => {
         setShowEdit(false);
 
-        onEdit(id, newTitle)
-    }
+        onEdit(id, newTitle);
+    };
 
     return (
         <div className="book-show">
+            <img src={`https://picsum.photos/seed/${id}/300/200`} alt="" />
             {showEdit ? (
                 <BookEdit title={title} id={id} onSubmit={handleSubmit} />
             ) : (
